@@ -1,0 +1,13 @@
+<h1>Home Page</h1>
+
+<p>Create a post</p>
+<%= form_with(url: create_post_path, method: :post) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :text %>
+  <%= f.submit "Submit", disable_with: 'Submitting...' %>
+<% end %>
+
+<% @posts.each do |post| %>
+  <h3><%= post["title"] %></h3>
+  <h4><%= post["text"] %></h4>
+<% end %>
